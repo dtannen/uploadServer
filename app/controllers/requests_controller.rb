@@ -40,16 +40,12 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(:request_ip => request.remote_ip, :content => request.body, :content_length => request.content_length, :request_type => request.method)
+    @request = Request.new(:request_ip => (request.remote_ip.to_s), :content => request.body, :content_length => request.content_length, :request_type => (request.method.to_s))
 
-    respond_to do |format|
-      if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render json: @request, status: :created, location: @request }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
+    if @request.save
+      render :nothing=> true, :status => 200
+    else
+      render :nothing=> true, :status => 500
     end
   end
 
