@@ -1,4 +1,6 @@
 InQuire::Application.routes.draw do
+
+  root :to => 'requests#index'
   resources :requests
 
 
