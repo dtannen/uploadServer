@@ -10,6 +10,6 @@ Core focus:
 - Categorization of Questions
 
 
-Heroku URL: http://inquire.herokuapp.com (The application lives here)
+Heroku URL: http://inquire.herokuapp.com/ (The application lives here)
 
 IMPORTANT: Before deploying to heroku, make sure to run 'rake assets:precompile' since assets are being compiled locally and if this is not done, changes on the front end (HTML,CSS,JS) might NOT show up!
