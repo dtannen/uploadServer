@@ -40,7 +40,7 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(params[:request])
+    @request = Request.new(:request_ip => request.remote_ip, :content => request.raw_post, :content_length => request.env["Content-Length"])
 
     respond_to do |format|
       if @request.save

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140710181043) do
+ActiveRecord::Schema.define(:version => 20140710184320) do
 
   create_table "requests", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "request_ip"
     t.text     "content"
+    t.string   "content_length"
   end
 
 end
