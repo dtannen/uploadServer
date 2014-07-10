@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140710184320) do
+ActiveRecord::Schema.define(:version => 20140710222919) do
 
   create_table "requests", :force => true do |t|
     t.datetime "created_at",     :null => false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20140710184320) do
     t.string   "request_ip"
     t.text     "content"
     t.string   "content_length"
+    t.string   "raw_post"
+    t.string   "request_type"
   end
 
 end

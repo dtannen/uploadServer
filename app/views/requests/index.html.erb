@@ -2,17 +2,17 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Request IP</th>
+    <th>Size (in bytes)</th>
+    <th>Request Type</th>
+    <th>Actions</th>
   </tr>
 
 <% @requests.each do |request| %>
   <tr>
     <td><%= request.request_ip %></td>
     <td><%= request.content_length %></td>
-    <td><%= link_to 'Show', request %></td>
-    <td><%= link_to 'Edit', edit_request_path(request) %></td>
+    <td><%= request.request_type %></td>
     <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
