@@ -1,5 +1,6 @@
 InQuire::Application.routes.draw do
 
+  mount Browserlog::Engine => '/logs'
   root :to => 'requests#index'
   resources :requests
 
