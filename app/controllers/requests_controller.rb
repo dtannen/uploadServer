@@ -40,6 +40,7 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
+    time1 = Time.now
     @request = Request.new(:request_ip => (request.remote_ip.to_s), :content => request.body, :content_length => request.content_length, :request_type => (request.method.to_s))
 
     if @request.save
@@ -74,6 +75,26 @@ class RequestsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to requests_url }
       format.json { head :no_content }
+    end
+  end
+
+  def download
+    filename = File.join(Rails.root, "public/test.txt")
+    @request = Request.new(:request_ip => (request.remote_ip.to_s), :content_length => filename.size, :request_type => (request.method.to_s))
+    if @request.save
+      send_file(filename, :type=>'text')
+    else
+      render :nothing=> true, :status => 500
+    end
+  end
+
+  def downloadlarge
+    filename = File.join(Rails.root, "public/large.txt")
+    @request = Request.new(:request_ip => (request.remote_ip.to_s), :content_length => filename.size, :request_type => (request.method.to_s))
+    if @request.save
+      send_file(filename, :type=>'text')
+    else
+      render :nothing=> true, :status => 500
     end
   end
 end

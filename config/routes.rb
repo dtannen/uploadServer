@@ -3,6 +3,8 @@ InQuire::Application.routes.draw do
   mount Browserlog::Engine => '/logs'
   root :to => 'requests#index'
   resources :requests
+  match '/download' => 'requests#download'
+  match '/downloadlarge' => 'requests#downloadlarge'
 
 
   # The priority is based upon order of creation:
