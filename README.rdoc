@@ -1,15 +1,5 @@
 == inQuire
 
-A Stack Overflow styled website for Proprietary Software.
-
-Core focus:
-
-- Simplicity
-- Clean and Easy to use UI
-- Robust mechanism for Votes and Comments
-- Categorization of Questions
-
-
-Heroku URL: http://inquire.herokuapp.com/ (The application lives here)
+A basic HTTP server to handle requests
 
 IMPORTANT: Before deploying to heroku, make sure to run 'rake assets:precompile' since assets are being compiled locally and if this is not done, changes on the front end (HTML,CSS,JS) might NOT show up!
