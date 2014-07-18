@@ -42,7 +42,6 @@ class RequestsController < ApplicationController
   def create
     time1 = Time.now
     @request = Request.new(:request_ip => (request.remote_ip.to_s), :content => request.body, :content_length => request.content_length, :request_type => (request.method.to_s))
-
     if @request.save
       render :nothing=> true, :status => 200
     else
