@@ -44,8 +44,6 @@ class RequestsController < ApplicationController
     @request = Request.new(:request_ip => (request.remote_ip.to_s), :content => request.body, :content_length => request.content_length, :request_type => (request.method.to_s))
     if @request.save
       render :nothing=> true, :status => 200
-    else
-      render :nothing=> true, :status => 500
     end
   end
 
