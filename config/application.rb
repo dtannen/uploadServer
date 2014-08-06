@@ -9,9 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-if Rack::Utils.respond_to?("key_space_limit=")
-    Rack::Utils.key_space_limit = 10000000 #10MB max Post Size
-end
+Rack::Utils.key_space_limit = 10000000 #10MB max Post Size  
 
 module InQuire
   class Application < Rails::Application
