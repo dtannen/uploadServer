@@ -1,10 +1,11 @@
 <%- model_class = Request -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize + " Server".titleize %></h1>
+  <h1><%=t '.title', :default => "MMKT Calendar " + " Server".titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:request_ip) %></th>
       <th><%= model_class.human_attribute_name(:size_in_bytes) %></th>
       <th><%= model_class.human_attribute_name(:request_type) %></th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
+        <td><%= request.id %></td>
         <td><%= request.request_ip %></td>
         <td><%= request.content_length %></td>
         <td><%= request.request_type %></td>
