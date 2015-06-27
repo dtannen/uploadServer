@@ -46,3 +46,6 @@ gem 'browserlog'
 
 # To use debugger
 # gem 'debugger'
+
+# add thin
+gem 'thin'
